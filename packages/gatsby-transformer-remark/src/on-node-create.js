@@ -18,6 +18,7 @@ module.exports = async function onCreateNode({
   }
 
   const content = await loadNodeContent(node)
+  if (!content) return;
   const data = grayMatter(content)
   const contentDigest = crypto
     .createHash(`md5`)
